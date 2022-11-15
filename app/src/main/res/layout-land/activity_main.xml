@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--button for adding an image from camera or gallery-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inputImageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text=" Upload Image"
+            app:cornerRadius="5dp"
+            app:icon="@drawable/ic_baseline_add_a_photo_24" />
+
+        <!--button to get the data from the uploaded image or scanned image-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/recognize_Text_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Get Data"
+            app:cornerRadius="5dp"
+            app:icon="@drawable/ic_baseline_document_scanner_24" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Imageview: show uploaded image or scanned image-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageIv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_baseline_image_24"
+                app:strokeWidth="20dp" />
+
+            <!--Textview: label to show the data from the image-->
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="RECOGNIZED DATA" />
+
+            <!--edit text:showing the recognized data-->
+            <EditText
+                android:id="@+id/recognizedTextEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

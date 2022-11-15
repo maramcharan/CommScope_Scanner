@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/commscopelogo"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="190dp"/>
+            <!--android:layout_gravity="end"-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CommScope Scanner"
+            android:textSize="30dp"
+            android:textColor="@color/purple_700"
+            android:textAlignment="center"
+            />
+
+        <!--button for adding an text image from camera or gallery-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inputImageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text=" Upload Image"
+            app:cornerRadius="5dp"
+            app:icon="@drawable/ic_baseline_add_a_photo_24"
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <!--button for adding an QR image from camera or gallery-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/QRbtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="QR CODE"
+            app:cornerRadius="5dp"
+            app:icon="@drawable/ic_baseline_qr_code_scanner_24"
+            style="?attr/materialButtonOutlinedStyle"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Imageview: show uploaded image or scanned image-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageIv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_baseline_image_24"
+                app:strokeWidth="20dp" />
+
+
+            <!--button for getting the data from the image-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/recognize_Text_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Get Data"
+                app:cornerRadius="5dp"
+                app:icon="@drawable/ic_baseline_document_scanner_24"
+                style="?attr/materialButtonOutlinedStyle"/>
+
+            <!--Text view:showing the recognized data-->
+            <EditText
+                android:id="@+id/recognizedTextEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
